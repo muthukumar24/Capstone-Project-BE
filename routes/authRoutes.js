@@ -127,7 +127,7 @@ router.post('/forgot-password', async (req, res) => {
 
     await user.save();
 
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = `https://progoods-inventory-management.netlify.app/reset-password/${resetToken}`;
     await transporter.sendMail({
       to: email,
       subject: 'Reset your password',
