@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const stripe = require('stripe')('sk_test_51PcnqX2KJIH2OUzy9EJBivtxqoKLj7tLYym5mHH27sdzoVlOAXPLJQtphlbsEGYCSN3odIHxfaXxmdk8TzvOdgfP00DN4dMnaD'); // Replace with your Stripe secret key
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Order = require('../models/Order');
 const Inventory = require('../models/Inventory');
 const authMiddleware = require('../middleware/authMiddleware');
